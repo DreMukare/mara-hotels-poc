@@ -72,7 +72,7 @@ function Navbar() {
           <div>{/* Loyalty, online availability, downloads */}</div>
         </div>
         <Link to="/">
-          <p className="ml-4 sm:ml-0 md:ml-0 lg:ml-0">Logo</p>
+          <p className="ml-8 sm:ml-0 md:ml-0 lg:ml-0">Logo</p>
         </Link>
         <NavigationMenu className="hidden sm:block md:block lg:block mt-5">
           <NavigationMenuList>
@@ -120,7 +120,7 @@ function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
         <Drawer direction="left">
-          <DrawerTrigger className="sm:hidden md:hidden lg:hidden" asChild>
+          <DrawerTrigger className="mr-6 sm:hidden md:hidden lg:hidden" asChild>
             <Button variant="ghost">
               <Menu />
             </Button>

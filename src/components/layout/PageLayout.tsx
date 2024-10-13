@@ -6,10 +6,10 @@ const PageLayout = () => {
   return (
     <div className="h-[100vh]">
       <Navbar />
-      <div className="px-4 pb-4">
+      <div className="px-8 pb-4 sm:px-12 md:px-12 lg:px-12">
         <Outlet />
       </div>
-      <div className="h-[30%] px-4 pt-4">
+      <div className="h-[30%] px-8 pt-4 sm:px-12 md:px-12 lg:px-12">
         <Footer />
       </div>
     </div>
