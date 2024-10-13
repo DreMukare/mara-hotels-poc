@@ -12,6 +12,18 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Button } from "../ui/button";
+import { Menu } from "lucide-react";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "../ui/drawer";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -53,72 +65,82 @@ const components: { title: string; href: string; description: string }[] = [
 
 function Navbar() {
   return (
-    <nav className="h-[20%] flex justify-between items-center flex-col">
-      <div>
-        <div>{/* Social Media Icons */}</div>
-        <div>{/* Loyalty, online availability, downloads */}</div>
-      </div>
-      <a>Logo</a>
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3">
-                  <NavigationMenuLink asChild>
-                    <a
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/"
+    <nav className="h-[20%]">
+      <div
+        className="h-[80%] sm:pt-5 md:pt-5 lg:pt-5 flex sm:flex-col md:flex-col lg:flex-col justify-between items-center"
+        style={{
+          border: "1px solid red",
+        }}
+      >
+        <div className="hidden sm:block md:block lg:block mt-5">
+          <div>{/* Social Media Icons */}</div>
+          <div>{/* Loyalty, online availability, downloads */}</div>
+        </div>
+        <Link to="/">
+          <p className="ml-4 sm:ml-0 md:ml-0 lg:ml-0">Logo</p>
+        </Link>
+        <NavigationMenu className="hidden sm:block md:block lg:block mt-5">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Tijigu Collection</NavigationMenuTrigger>
+              <NavigationMenuContent className="pl-5">
+                <ul className="grid grid-cols-2 gap-x-1 w-[300px] h-[150px]">
+                  {["hotel-1", "hotel-2", "hotel-3", "hotel-4", "hotel-5"].map(
+                    (hotel, idx) => (
+                      <ListItem key={idx}>
+                        <Link to={hotel}>{hotel}</Link>
+                      </ListItem>
+                    )
+                  )}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>About Tijigu</NavigationMenuTrigger>
+              <NavigationMenuContent></NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                  {components.map((component) => (
+                    <ListItem
+                      key={component.title}
+                      title={component.title}
+                      href={component.href}
                     >
-                      {/* <Icons.logo className="h-6 w-6" /> */}
-                      <div className="mb-2 mt-4 text-lg font-medium">
-                        shadcn/ui
-                      </div>
-                      <p className="text-sm leading-tight text-muted-foreground">
-                        Beautifully designed components built with Radix UI and
-                        Tailwind CSS.
-                      </p>
-                    </a>
-                  </NavigationMenuLink>
-                </li>
-                <ListItem href="/docs" title="Introduction">
-                  Re-usable components built using Radix UI and Tailwind CSS.
-                </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {components.map((component) => (
-                  <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                  >
-                    {component.description}
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link to="/docs">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Documentation
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+                      {component.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link to="/our-contacts">
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Our Contacts
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+        <Drawer direction="left">
+          <DrawerTrigger className="sm:hidden md:hidden lg:hidden" asChild>
+            <Button variant="ghost">
+              <Menu />
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent className="h-[100vh] w-[70vw]">
+            {["hotel-1", "hotel-2", "hotel-3", "hotel-4", "hotel-5"].map(
+              (hotel, idx) => (
+                <Link to={hotel} key={idx}>
+                  <Button variant="ghost">{hotel}</Button>
+                </Link>
+              )
+            )}
+          </DrawerContent>
+        </Drawer>
+      </div>
     </nav>
   );
 }
