@@ -4,12 +4,12 @@ import Footer from "../common/Footer";
 
 const PageLayout = () => {
   return (
-    <div className="h-screen relative">
+    <div className="h-[100vh]">
       <Navbar />
-      <div className="h-max px-4">
+      <div className="px-4 pb-4">
         <Outlet />
       </div>
-      <div className="absolute bottom-0 left-0 h-[20%] px-4">
+      <div className="h-[30%] px-4 pt-4">
         <Footer />
       </div>
     </div>
