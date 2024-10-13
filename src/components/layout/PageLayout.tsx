@@ -6,10 +6,10 @@ const PageLayout = () => {
   return (
     <div className="h-screen relative">
       <Navbar />
-      <div className="h-max">
+      <div className="h-max px-4">
         <Outlet />
       </div>
-      <div className="absolute bottom-0 left-0 h-[20%]">
+      <div className="absolute bottom-0 left-0 h-[20%] px-4">
         <Footer />
       </div>
     </div>
