@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-
+import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cn } from "@/lib/utils";
 // import { Icons } from "@/components/icons"
 import {
@@ -65,13 +65,8 @@ const components: { title: string; href: string; description: string }[] = [
 
 function Navbar() {
   return (
-    <nav className="h-[20%]">
-      <div
-        className="h-[80%] sm:pt-5 md:pt-5 lg:pt-5 flex sm:flex-col md:flex-col lg:flex-col justify-between items-center"
-        style={{
-          border: "1px solid red",
-        }}
-      >
+    <nav className="h-[15%] sm:h-[20%] md:h-[20%] lg:h-[20%]">
+      <div className="h-[80%] sm:pt-5 md:pt-5 lg:pt-5 flex sm:flex-col md:flex-col lg:flex-col justify-between items-center">
         <div className="hidden sm:block md:block lg:block mt-5">
           <div>{/* Social Media Icons */}</div>
           <div>{/* Loyalty, online availability, downloads */}</div>
@@ -130,14 +125,104 @@ function Navbar() {
               <Menu />
             </Button>
           </DrawerTrigger>
-          <DrawerContent className="h-[100vh] w-[70vw]">
-            {["hotel-1", "hotel-2", "hotel-3", "hotel-4", "hotel-5"].map(
-              (hotel, idx) => (
-                <Link to={hotel} key={idx}>
-                  <Button variant="ghost">{hotel}</Button>
-                </Link>
-              )
-            )}
+          <DrawerContent className="h-[100vh] w-[70vw] pl-16 pt-16">
+            <NavigationMenuPrimitive.Root>
+              <NavigationMenuPrimitive.List className="flex flex-col justify-center gap-6">
+                <NavigationMenuPrimitive.Item>
+                  <NavigationMenuPrimitive.Trigger>
+                    Tijigu Collection
+                  </NavigationMenuPrimitive.Trigger>
+                  <NavigationMenuPrimitive.Content>
+                    <ul className="grid grid-cols-2 gap-x-1 w-[300px] h-[150px]">
+                      {[
+                        "hotel-1",
+                        "hotel-2",
+                        "hotel-3",
+                        "hotel-4",
+                        "hotel-5",
+                      ].map((hotel, idx) => (
+                        <ListItem key={idx}>
+                          <Link to={hotel}>{hotel}</Link>
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuPrimitive.Content>
+                </NavigationMenuPrimitive.Item>
+                <NavigationMenuPrimitive.Item>
+                  <NavigationMenuPrimitive.Trigger>
+                    Tijigu Collection
+                  </NavigationMenuPrimitive.Trigger>
+                  <NavigationMenuPrimitive.Content>
+                    <ul className="grid grid-cols-2 gap-x-1 w-[300px] h-[150px]">
+                      {[
+                        "hotel-1",
+                        "hotel-2",
+                        "hotel-3",
+                        "hotel-4",
+                        "hotel-5",
+                      ].map((hotel, idx) => (
+                        <ListItem key={idx}>
+                          <Link to={hotel}>{hotel}</Link>
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuPrimitive.Content>
+                </NavigationMenuPrimitive.Item>
+              </NavigationMenuPrimitive.List>
+            </NavigationMenuPrimitive.Root>
+            {/* <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>
+                    Tijigu Collection
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="pl-5">
+                    <ul className="grid grid-cols-2 gap-x-1 w-[300px] h-[150px]">
+                      {[
+                        "hotel-1",
+                        "hotel-2",
+                        "hotel-3",
+                        "hotel-4",
+                        "hotel-5",
+                      ].map((hotel, idx) => (
+                        <ListItem key={idx}>
+                          <Link to={hotel}>{hotel}</Link>
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>About Tijigu</NavigationMenuTrigger>
+                  <NavigationMenuContent></NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                      {components.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link to="/our-contacts">
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Our Contacts
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu> */}
           </DrawerContent>
         </Drawer>
       </div>
