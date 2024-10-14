@@ -53,7 +53,7 @@ const CarouselHero = () => {
 
   return (
     <Carousel
-      className="mx-[-5em]"
+      className="mx-[-2em] mt-[-30px] mb-16"
       plugins={[
         Autoplay({
           delay: 5500,
