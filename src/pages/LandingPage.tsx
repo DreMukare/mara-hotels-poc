@@ -1,9 +1,12 @@
-import React from "react";
+import CarouselHero from "@/components/Landing/CarouselHero";
+import MainContentLayout from "@/components/layout/MainContentLayout";
 
-type Props = {};
-
-const LandingPage = (props: Props) => {
-  return <div>LandingPage</div>;
+const LandingPage = () => {
+  return (
+    <MainContentLayout>
+      <CarouselHero />
+    </MainContentLayout>
+  );
 };
 
 export default LandingPage;
