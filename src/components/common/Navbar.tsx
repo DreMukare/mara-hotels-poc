@@ -14,16 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "../ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 
 const components: { title: string; href: string; description: string }[] = [
   {

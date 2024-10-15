@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-const OurContactsPage = (props: Props) => {
+const OurContactsPage = () => {
   return <div>OurContactsPage</div>;
 };
 

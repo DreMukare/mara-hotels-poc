@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-const ReservationsEnquiryPage = (props: Props) => {
+const ReservationsEnquiryPage = () => {
   return <div>ReservationsEnquiryPage</div>;
 };
 

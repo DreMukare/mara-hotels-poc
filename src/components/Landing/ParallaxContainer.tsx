@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-const ParallaxContainer = (props: Props) => {
+const ParallaxContainer = () => {
   return <div>ParallaxContainer</div>;
 };
 

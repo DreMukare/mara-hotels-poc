@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-const SpecialOffersPage = (props: Props) => {
+const SpecialOffersPage = () => {
   return <div>SpecialOffersPage</div>;
 };
 
