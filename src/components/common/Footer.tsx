@@ -1,5 +1,9 @@
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <div className="h-[100%] w-[100%] flex items-center justify-center text-white">
+      Tijigu
+    </div>
+  );
 };
 
 export default Footer;
