@@ -88,8 +88,8 @@ function Navbar() {
               <Menu className="text-brandGreen-500" />
             </Button>
           </DrawerTrigger>
-          <DrawerContent className="h-[100vh] w-[70vw] pt-16">
-            <div className="w-[80%] mx-auto">
+          <DrawerContent className="h-[100vh] w-[70vw]">
+            <div className="w-[80%] mx-auto my-auto">
               <Accordion type="single" collapsible className="w-[100%] mb-5">
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="hover:text-brandGreen-500">
