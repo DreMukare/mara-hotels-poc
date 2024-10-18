@@ -8,10 +8,10 @@ const PageLayout = () => {
   return (
     <div className="h-[100%]">
       <Navbar />
-      <div className="px-8 pb-4 sm:px-12 md:px-12">
+      <div className="px-8 mx-auto pb-4 sm:px-12 md:px-12">
         <Outlet />
       </div>
-      <div className="h-[30%] px-8 pt-4 sm:px-12 md:px-12 m-auto bg-neutral-950 bg-opacity-85">
+      <div className="min-h-[30%] px-8 pt-4 sm:px-12 md:px-12 m-auto bg-neutral-950 bg-opacity-85">
         <Footer />
       </div>
       {/* <Parallax pages={1.5}>
