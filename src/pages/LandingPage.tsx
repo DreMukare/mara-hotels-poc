@@ -10,7 +10,7 @@ const LandingPage = () => {
       <CopySection
         title="Welcome to the Tijigu Collection"
         children={
-          <p>
+          <p className="md:w-[94%] mx-auto">
             The Tijigu Collection of 5 resorts and hotels spread across
             Zanzibar, Shaba, the Amboseli and Nanyuki is known for it's unique
             feel and accomodation service. Tijigu crafts authentic and memorable
