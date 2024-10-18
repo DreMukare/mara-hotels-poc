@@ -56,18 +56,16 @@ const components: { title: string; href: string; description: string }[] = [
 
 function Navbar() {
   return (
-    <nav className="h-[15%] sm:h-[20%] md:h-[20%] lg:h-[20%]">
-      <div className="h-[80%] sm:pt-5 md:pt-5 lg:pt-5 flex sm:flex-col md:flex-col lg:flex-col justify-between items-center">
-        <div className="hidden sm:block md:block lg:block mt-5">
+    <nav className="h-[10%] sm:h-[15%] md:h-[15%] mb-6">
+      <div className="h-[100%] sm:pt-5 md:pt-5 flex sm:flex-col md:flex-col justify-between items-center">
+        <div className="hidden sm:block md:block mt-5">
           <div>{/* Social Media Icons */}</div>
           <div>{/* Loyalty, online availability, downloads */}</div>
         </div>
         <Link to="/">
-          <p className="ml-8 sm:ml-0 md:ml-0 lg:ml-0 text-brandGreen-500">
-            Tijigu
-          </p>
+          <p className="ml-8 sm:ml-0 md:ml-0 text-brandGreen-500">Tijigu</p>
         </Link>
-        <NavigationMenu className="hidden sm:block md:block lg:block mt-5">
+        <NavigationMenu className="hidden sm:block md:block  mt-5">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Tijigu Collection</NavigationMenuTrigger>
@@ -87,22 +85,7 @@ function Navbar() {
               <NavigationMenuTrigger>About Tijigu</NavigationMenuTrigger>
               <NavigationMenuContent></NavigationMenuContent>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {components.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+
             <NavigationMenuItem>
               <Link to="/our-contacts">
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -113,7 +96,7 @@ function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
         <Drawer direction="left">
-          <DrawerTrigger className="mr-6 sm:hidden md:hidden lg:hidden" asChild>
+          <DrawerTrigger className="mr-6 sm:hidden md:hidden" asChild>
             <Button variant="ghost">
               <Menu className="text-brandGreen-500" />
             </Button>
@@ -192,7 +175,7 @@ function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Components</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                       {components.map((component) => (
                         <ListItem
                           key={component.title}
