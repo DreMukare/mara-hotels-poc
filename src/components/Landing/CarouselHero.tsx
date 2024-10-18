@@ -53,7 +53,7 @@ const CarouselHero = () => {
 
   return (
     <Carousel
-      className="mx-[-2em] mt-[-30px] mb-16"
+      className="mx-[-2em] mt-[-30px] mb-16 hover:cursor-grab"
       plugins={[
         Autoplay({
           delay: 5500,
@@ -69,8 +69,8 @@ const CarouselHero = () => {
           );
         })}
       </CarouselContent>
-      <CarouselPrevious className="hidden sm:block md:block lg:block" />
-      <CarouselNext className="hidden sm:block md:block lg:block" />
+      {/* <CarouselPrevious className="hidden sm:inline-block md:inline-block" />
+      <CarouselNext className="hidden sm:inline-block md:inline-block" /> */}
     </Carousel>
   );
 };
