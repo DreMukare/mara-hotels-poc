@@ -3,18 +3,14 @@ type Props = {
   marginY?: string;
   color?: string;
   thickness?: string;
+  moreClasses?: string;
 };
 
 const Divider = (props: Props) => {
-  const {
-    width = "100%",
-    marginY = "4",
-    color = "neutral-300",
-    thickness = "0.5px",
-  } = props;
+  const { width, marginY, color, thickness, moreClasses } = props;
   return (
     <div
-      className={`w-[${width}] my-[${marginY}] bg-[${color}] h-[${thickness}]`}
+      className={`${width} ${marginY} ${color} ${thickness} ${moreClasses}`}
     />
   );
 };
