@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cn } from "@/lib/utils";
-// import { Icons } from "@/components/icons"
+
 import {
   NavigationMenu,
   NavigationMenuContent,

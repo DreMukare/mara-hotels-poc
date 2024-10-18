@@ -2,8 +2,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  // CarouselNext,
+  // CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image1 from "@/assets/images/hero/landing-header.jpg";
 import Image2 from "@/assets/images/hero/pexels-pixabay-261181.jpg";
